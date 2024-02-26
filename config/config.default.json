@@ -1,0 +1,19 @@
+{
+    "interval": "* * * * *",
+    "domains": [
+        "www.example.com",
+        "www.example.org",
+        "www.example.net"
+    ],
+    "email" : {
+        "service": "your_email_service_provider",
+        "authentication": {
+            "user": "you@example.com",
+            "password": "your_email_password"
+        },
+        "options": {
+            "from": "your_email@example.com",
+            "to": "recipient_email@example.com"
+        }
+    }
+}

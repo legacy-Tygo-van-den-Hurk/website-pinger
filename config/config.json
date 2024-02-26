@@ -1,0 +1,17 @@
+{
+    "interval": "0 * * * *",
+    "domains": [
+        "tygo.van.den.hurk.dev"
+    ],
+    "email" : {
+        "service": "gmail",
+        "authentication": {
+            "user": "sth250203@gmail.com",
+            "password": "your_email_password"
+        },
+        "options": {
+            "from": "sth250203@gmail.com",
+            "to": "recipient_email@example.com"
+        }
+    }
+}
