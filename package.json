@@ -1,0 +1,31 @@
+{
+  "name": "website-pinger",
+  "version": "1.0.0",
+  "description": "Pings all websites in a JSON file once every interval, and sends an email when one of the websites are down, telling you which one.",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/main.js",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/St-H123/website-pinger.git"
+  },
+  "keywords": [
+    "ping",
+    "websites"
+  ],
+  "author": "Tygo van den Hurk <hazels.05.remount@icloud.com>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "is-online": "^10.0.0",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.9"
+  },
+  "devDependencies": {
+    "terser": "^5.27.2",
+    "typescript": "^5.3.3"
+  }
+}
