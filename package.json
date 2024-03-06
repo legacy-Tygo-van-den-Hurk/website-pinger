@@ -1,31 +1,35 @@
 {
   "name": "website-pinger",
   "version": "1.0.0",
-  "description": "Pings all websites in a JSON file once every interval, and sends an email when one of the websites are down, telling you which one.",
-  "main": "./dist/main.js",
+  "description": "pings all websites in a JSON configuration file once every interval that you also specify here, and sends an email when one of the websites are down, and tells you which one.",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/main.js",
-    "build": "tsc"
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/St-H123/website-pinger.git"
+    "url": "git+https://github.com/St-H123/website-pinger.git"
   },
-  "keywords": [
-    "ping",
-    "websites"
-  ],
+  "keywords": [],
   "author": "Tygo van den Hurk <hazels.05.remount@icloud.com>",
-  "license": "GPL-3.0-or-later",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/St-H123/website-pinger/issues"
+  },
+  "homepage": "https://github.com/St-H123/website-pinger#readme",
   "dependencies": {
-    "commander": "^12.0.0",
-    "is-online": "^10.0.0",
-    "node-cron": "^3.0.3",
-    "nodemailer": "^6.9.9"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "terser": "^5.27.2",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   }
 }
