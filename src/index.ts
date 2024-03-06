@@ -1,30 +1,51 @@
+const port = process.env.PORT || 3000;
+
 // src/index.ts
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
+import Terminal from "./Terminal";
 
-/*
- * Load up and parse configuration details from
- * the `.env` file to the `process.env`
- * object of Node.js
- */
 dotenv.config();
 
-/*
- * Create an Express application and get the
- * value of the PORT environment variable
- * from the `process.env`
- */
-const app: Express = express();
-const port = process.env.PORT || 3000;
 
-/* Define a route for the root path ("/")
- using the HTTP GET method */
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+
+const app: Express = express();
+
+
+app.get("/", (request: Request, response: Response) => {
+
+    const requestIP_Address = (request.socket.remoteAddress);
+    const paintedRequestIP_Address = Terminal.paintString(` ${requestIP_Address} `,
+        Terminal.colors.foreground.black, 
+        Terminal.colors.background.white);
+    Terminal.println(`request from ${paintedRequestIP_Address}!`);
+    response.send("Hello, World!");
 });
 
-/* Start the Express app and listen
- for incoming requests on the specified port */
+// Start the Express app and listen for incoming requests on the specified port
 app.listen(port, () => {
-  console.log(`[server]: Server is running at http://localhost:${port}`);
+
+    console.log("\nwith color:");
+    
+    Terminal.println("some message");
+    Terminal.error(`test error`);
+    Terminal.warn(`test warning`);
+    Terminal.success(`test success`);
+    Terminal.event(`test event`);
+    Terminal.urgent(`test urgent`);
+
+    console.log("\nwithout color:");
+    Terminal.togglePrintsColor();
+
+    Terminal.println(`some message`);
+    Terminal.error(`test error`);
+    Terminal.warn(`test warning`);
+    Terminal.success(`test success`);
+    Terminal.event(`test event`);
+    Terminal.urgent(`test urgent`);
+
+    console.log("\nactual application:\n");
+    Terminal.togglePrintsColor();
+    Terminal.println(`Server is running at http://localhost:${port}`);
+
 });
