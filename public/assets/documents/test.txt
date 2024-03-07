@@ -1,0 +1,3 @@
+# file serving works!
+if you are reading this, then `test.txt` was served to you.
+That means that the `assets/` directory is being served
