@@ -1,11 +1,6 @@
 {
-    "port" : 1234,
-    "interval" : "* * * * *",
-    "domains" : [
-        "www.example.com",
-        "www.example.org",
-        "www.example.net"
-    ],
+    "verbal" : false,
+    "monochrome" : false,
     "email" : {
         "service" : "your_email_service_provider",
         "authentication" : {
@@ -14,7 +9,16 @@
         },
         "options" : {
             "from" : "your_email@example.com",
-            "to" : "recipient_email@example.com"
+            "to" : [
+                "recipient_email@example.com"
+            ]
         }
-    }
+    },
+    "port" : 3000,
+    "interval" : "* * * * *",
+    "domains" : [
+        "www.example.com",
+        "www.example.org",
+        "www.example.net"
+    ]
 }

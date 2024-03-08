@@ -1,17 +1,24 @@
 {
-    "interval": "0 * * * *",
-    "domains": [
-        "tygo.van.den.hurk.dev"
-    ],
+    "verbal" : true,
+    "monochrome" : true,
     "email" : {
-        "service": "gmail",
-        "authentication": {
-            "user": "sth250203@gmail.com",
-            "password": "your_email_password"
+        "service" : "mail.tygo.van.den.hurk.dev",
+        "authentication" : {
+            "user" : "sth250203@gmail.com",
+            "password" : "your_email_password"
         },
-        "options": {
-            "from": "sth250203@gmail.com",
-            "to": "recipient_email@example.com"
+        "options" : {
+            "from" : "sth250203@gmail.com",
+            "to" : [
+                "recipient_email@example.com"
+            ]
         }
-    }
+    },
+    "domains": [
+        "tygo.van.den.hurk.dev",
+        "van.den.hurk.dev",
+        "new.tygo.van.den.hurk.dev"
+    ],
+    "port" : 69.000,
+    "interval" : "1 2 3 4 *"
 }
